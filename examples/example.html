@@ -68,7 +68,7 @@
                   .selectAll("text")  
                   .style("text-anchor", "center");
 
-      var temp = [{'x':new Date("2004-02-24T00:01:00"), image: "https://github.com/favicon.ico"}, {'x':new Date("2004-02-24T00:05:00"), image: "https://github.com/favicon.ico"}, {'x':new Date("2004-02-24T00:15:00"), image: "https://github.com/favicon.ico"}]
+      var temp = [{'x':new Date("2004-02-24T00:01:00"), image: "jackie.png"}, {'x':new Date("2004-02-24T00:05:00"), image: "wat.png"}, {'x':new Date("2004-02-24T00:15:00"), image: "troll.png"}]
 
       g.selectAll(null)
           .data(temp)
@@ -76,7 +76,8 @@
           .append("image")
           .attr({'x':function(d){ console.log(d.x);return xScale(d.x); }
           })
-          .attr("xlink:href", "https://github.com/favicon.ico");
+          .attr({'xlink:href':function(d){ console.log(d.image);return d.image; }
+          });
 
 
       function zoomed(){
